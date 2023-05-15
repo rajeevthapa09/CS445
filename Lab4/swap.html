@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         let val = 1;
+        function swap(){
+            let pic1 = document.getElementById("pic1");
+            let pic2 = document.getElementById("pic2");
+            if(val == 1){
+                pic1.setAttribute("src","/images/tiger.jpg");
+                pic2.setAttribute("src","/images/mountain.jpg");
+                val = 2;
+            }else{
+                pic1.setAttribute("src","/images/mountain.jpg");
+                pic2.setAttribute("src","/images/tiger.jpg");
+                val = 1;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div><img id="pic1" src="/images/mountain.jpg"></div>
+    <div><img id="pic2" src="/images/tiger.jpg"></div>
+    <button onclick="swap()">Swap</button>
+</body>
+</html>

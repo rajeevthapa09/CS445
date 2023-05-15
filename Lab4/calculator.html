@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add(){
+            let input1 = document.getElementById("input1");
+            let input2 = document.getElementById("input2");
+            let input3 = document.getElementById("input3");
+            if(isNaN(input1.value)){
+                alert("Input 1 has to be a number");
+            }else if(isNaN(input2.value)){
+                alert("Input 2 has to be a number");
+            }else{
+                input3.value = parseInt(input1.value) + parseInt(input2.value);
+            }
+        }
+        function checkVal(val, id){
+            if(isNaN(val)){
+                document.getElementById(id).value="";
+                alert("Only number is allowed");
+            }
+            
+        }
+
+        function doMath(){
+            let input1 = document.getElementById("input1_1");
+            let input2 = document.getElementById("input2_1");
+            let input3 = document.getElementById("input3_1");
+            let selectVal = document.querySelector("select[name='mathOK'] option:checked");
+
+            switch(selectVal.value){
+                case "add":
+                    input3.value = parseInt(input1.value) + parseInt(input2.value);
+                    break;
+
+                case "subtract":
+                    input3.value = parseInt(input1.value) - parseInt(input2.value);
+                    break;
+
+                case "multiply":
+                    input3.value = parseInt(input1.value) * parseInt(input2.value);
+                    break;
+
+                case "divide":
+                    input3.value = (parseInt(input1.value) / parseInt(input2.value)).toFixed(3);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Simple Way</h3>
+    <label>Input 1:</label><input id="input1" type="text" onkeyup="checkVal(value,'input1')"><br />
+    <label>Input 2:</label><input id="input2" type="text"  onkeyup="checkVal(value,'input2')"><br />
+    <label>Result:</label><input id="input3" readonly><br />
+    <button onclick="add()">Submit</button>
+    <br /><br /><br />
+    <hr />
+    <h3>Advanced Way</h3>
+    <label>Input 1:</label><input id="input1_1" type="text" onkeyup="checkVal(value,'input1_1')">
+    <label>Input 2:</label><input id="input2_1" type="text" onkeyup="checkVal(value,'input2_1')">
+    <select name="mathOK">
+        <option onclick="doMath()" value="add">Add</option>
+        <option onclick="doMath()" value="subtract">Subtract</option>
+        <option onclick="doMath()" value="multiply">Multiply</option>
+        <option onclick="doMath()" value="divide">Divide</option>
+    </select>
+    <label>Result:</label><input id="input3_1" type="text" readonly><br />
+
+</body>
+</html>
