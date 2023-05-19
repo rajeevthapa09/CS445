@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+ 
+
+<body>
+
+    <button id="myBtn">Try it</button>
+
+    <script>
+
+        const myBtn = document.getElementById("myBtn");
+
+        myBtn.addEventListener("click", function(event) {
+
+            console.log(1);
+
+        });
+
+        myBtn.addEventListener("click", function(event) {
+
+            console.log(2);
+
+            event.stopImmediatePropagation();
+
+        });
+
+        myBtn.addEventListener("click", function(event) {
+
+            console.log(3);
+
+        });
+
+    </script>
+
+</body>
+
+ 
+
+</html>
