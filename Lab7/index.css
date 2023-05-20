@@ -1,0 +1,19 @@
+#employeeList{
+    width: 500px;
+    height: auto;
+}
+
+.flexcontainer{
+
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.flexcontainer2{
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+
+}
